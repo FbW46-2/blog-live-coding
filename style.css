@@ -1,0 +1,109 @@
+* {
+  /* Defining the box-sizing property here is fundemental */
+  box-sizing: border-box;
+  /*
+  Those 2 properties here are very useful, but I'm avoiding using them for now
+
+  margin: 0;
+  padding: 0;
+   */
+}
+
+body {
+  font-family: sans-serif;
+}
+
+figure {
+  margin: 0;
+}
+
+
+p img {
+  float: left;
+  width: 100px;
+}
+.main-header {
+  background: rgb(75, 75, 75);
+  color: #fff;
+  margin-bottom: 3rem;
+  /* the padding here is to create an internal space between the border of the header and its content */
+  padding: 0 16px;
+}
+
+/* To put logo and navigation on the same row, I'm changing them from display: block; to display: inline-block; */
+.logo {
+  display: inline-block;
+}
+
+.main-nav {
+  display: inline-block;
+  margin-left: 16px;
+}
+
+.main-nav ul {
+  padding: 0;
+}
+
+/*
+I want to put a margin-left between each <li> element, but I don't need it for the first element.
+I have a few options: I add the margin-left to each element and then override it only for the first-child,
+or use the single definition with combinators down below.
+ */
+.main-nav li {
+  display: inline-block;
+  margin-left: 16px;
+}
+
+.main-nav li:first-child {
+  margin-left: 0;
+}
+
+/*
+  -- Try to think about this and understand what's going on and why it works --
+  Same effect as above
+  .main-nav ul > li + li {
+  margin-left: 16px;
+  }
+*/
+
+.main-nav a {
+  background: white;
+  border-radius: 16px;
+  color: #333;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+.main-nav a:hover {
+  background: #333;
+  color: white;
+}
+/* To center block element with a defined width I can set the left and right margins to auto */
+.main-wrapper {
+  margin: 0 auto;
+  width: 500px;
+}
+
+/* Let's have the images inside posts to take all the available space. This style might be problematic for the individual posts page, so I'll have to adjust it later */
+.post img {
+  width: 100%;
+}
+
+/* A wrapper is an element that "wraps" one or more elements to give them some common style or add them some functionalities. In this case, I want to add some padding to the content that it's wrapping */
+.content-wrapper {
+  padding: 0 32px;
+}
+
+.post:nth-child(2n) {
+  background: rgb(221, 255, 218);
+}
+
+.read-more {
+  background: rgb(4, 214, 116);
+  color: black;
+  text-decoration: none;
+}
+
+.read-more:hover {
+  background: black;
+  color: rgb(4, 214, 116);
+}
