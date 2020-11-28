@@ -1,1 +1,1 @@
-# blog-live-coding
+# Live coded blog (work in progress) 
